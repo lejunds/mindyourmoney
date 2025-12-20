@@ -16,10 +16,13 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-@import '@fontsource-variable/outfit';
-@import 'tailwindcss';
+import type { Handle } from '@sveltejs/kit';
 
-@theme {
-	--font-outfit-stack: 'Outfit Variable', var(--font-sans);
-	--default-font-family: var(--font-outfit-stack);
-}
+const isLatinFont = /\/_app\/immutable\/assets\/[^/]*-latin-(?!ext)[^/]*\.[A-Za-z0-9_-]+\.woff2?$/;
+
+export const handle: Handle = async ({ event, resolve }) => {
+	return resolve(event, {
+		// Preload latin fonts.
+		preload: ({ type, path }) => type === 'font' && isLatinFont.test(path)
+	});
+};

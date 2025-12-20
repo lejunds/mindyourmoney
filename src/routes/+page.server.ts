@@ -16,10 +16,10 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-@import '@fontsource-variable/outfit';
-@import 'tailwindcss';
+import type { PageServerLoad } from './$types';
 
-@theme {
-	--font-outfit-stack: 'Outfit Variable', var(--font-sans);
-	--default-font-family: var(--font-outfit-stack);
-}
+export const load: PageServerLoad = ({ setHeaders }) => {
+	setHeaders({
+		'Cache-Control': 'no-store, no-cache, must-revalidate, max-age=0'
+	});
+};

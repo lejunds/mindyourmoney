@@ -16,10 +16,19 @@
   along with this program.  If not, see <https://www.gnu.org/licenses/>.
 -->
 
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
-<p>
-	<a href="https://www.flaticon.com/free-icons/rupees" title="rupees icons">
-		Rupees icons created by NajmunNahar - Flaticon
-	</a>
-</p>
+<svelte:head>
+	<meta name="description" content="Mind your Money" />
+	<title>MyMoney | Mind your Money</title>
+</svelte:head>
+
+<main>
+	<h1>Welcome to SvelteKit</h1>
+	<p>
+		Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation
+	</p>
+	<p>
+		<a href="https://www.flaticon.com/free-icons/rupees" title="rupees icons">
+			Rupees icons created by NajmunNahar - Flaticon
+		</a>
+	</p>
+</main>
